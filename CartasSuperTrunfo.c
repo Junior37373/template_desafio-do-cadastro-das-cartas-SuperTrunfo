@@ -40,6 +40,12 @@ int pessoas;
 float tamanho; 
 float PIB;
 int turismo;
+float densidade;
+float Densidade;
+float per;
+float Per;
+
+
 
 printf("Carta 2:\nUma letra de 'A' a 'H' (representando um dos oito estados): ");
 scanf("%s", &Bahia);
@@ -62,9 +68,16 @@ scanf("%f", &PIB);
 printf("Qual a quantidade de pontos turísticos na cidade: ");
 scanf("%d", &turismo);
 
-printf("Carta 1: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n", estado, codigo, cidade, populacao, area, pib, turistico);
 
-printf("Carta 2: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n", Bahia, cod, Municipiu, pessoas, tamanho, PIB, turismo);
+densidade = populacao / area;
+Densidade = pessoas / tamanho;
+per = pib / populacao;
+Per = PIB / pessoas ;
+
+
+printf("Carta 1: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n Densidade Populacional: %.2f\n PIB per Capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, turistico, densidade, per);
+
+printf("Carta 2: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n Densidade Populacional: %.2f\n PIB per Capita: %.2f\n", Bahia, cod, Municipiu, pessoas, tamanho, PIB, turismo, Densidade, Per);
 
 return 0;
 
