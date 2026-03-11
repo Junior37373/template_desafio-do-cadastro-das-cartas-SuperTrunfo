@@ -1,97 +1,129 @@
 #include <stdio.h>
 
-int main() {
-char estado[20]; 
-char codigo[20];
-char cidade[30];
-unsigned long int populacao;
-float area;
-int turistico;
-float pib; 
+int main(){
+    //Carta 1:
+    char pais[30] = "Brasil";
+    int populacao = 214000000; 
+    float area = 8515767;
+    float pib = 1.92;
+    int pontos = 30;
+    int densidade = populacao / area;
+    
+//Carta 2:
+
+    char pais2[30] = "Agentina";
+    int populacao2 = 46000000;
+    float area2 = 2780400;
+    float pib2 = 0.63;
+    int pontos2 = 30;
+    int densidade2 = populacao2 / area2;
+
+    int opcao;
+
+    printf("*** Comparação de Cartas super trunfo ***\n");
+    printf("Escolha o atributo para comparar:\n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos turisticos\n");
+    printf("5. Densidade demografica\n");
+    printf("Qual a opção de sua escolha ?\n");
+    scanf("%d", &opcao);
+
+    printf("Comparação %s x %s\n",pais, pais2 );
 
 
-printf("Carta 1:\nUma letra de 'A' a 'H' (representando um dos oito estados): ");
-scanf("%s", &estado);
+    switch (opcao){
+        case 1:
+        printf("Atributo: População\n");
+        printf("%s: %d\n", pais, populacao);
+        printf("%s: %d\n", pais2, populacao2);
 
-printf("A letra do estado seguida de um número de 01 a 04 (ex: A01, B03): ");
-scanf("%s", &codigo);
+        if(populacao > populacao2){
+            printf("Vencedor: %s", pais);
+        }else if(populacao2 > populacao){
+            printf("Vencedor: %s", pais2);
+        
+        }else{
+            printf("Empate\n");
+        }
+        break;
+        case 2:
+        printf("Atributo: Área\n");
+        printf("%s: %f\n", pais, area);
+        printf("%s: %f\n", pais2, area2);
 
-printf("O nome da cidade: ");
-scanf("%s", &cidade);
+        if(area > area2){
+            printf("Vencedor: %s", pais);
+        }else if(area2 > area){
+            printf("Vencedor: %s", pais2);
+        
+        }else{
+            printf("Empate\n");
+        }
+        break;
+        case 3:
+        printf("Atributo: PIB\n");
+        printf("%s: %f\n", pais, pib);
+        printf("%s: %f\n", pais2, pib2);
 
-printf("Qual é o número de habitantes da cidade: ");
-scanf("%d", &populacao);
+        if(pib > pib2){
+            printf("Vencedor: %s", pais);
+        }else if(pib2 > pib){
+            printf("Vencedor: %s", pais2);
+        
+        }else{
+            printf("Empate\n");
+        }
+        break;
+        case 4:
+        printf("Atributo: Pontos turisticos\n");
+        printf("%s: %d\n", pais, pontos);
+        printf("%s: %d\n", pais2, pontos2);
 
-printf("A área da cidade em quilômetros quadrados: ");
-scanf("%f", &area);
+        if(pontos > pontos2){
+            printf("Vencedor: %s", pais);
+        }else if(pontos2 > pontos){
+            printf("Vencedor: %s", pais2);
+        
+        }else{
+            printf("Empate\n");
+        }
+        break;
+        case 5:
+        printf("Atributo: Densidade demografica\n");
+        printf("%s: %d\n", pais, densidade);
+        printf("%s: %d\n", pais2, densidade2);
 
-printf("O Produto Interno Bruto(PIB) da cidade: ");
-scanf("%f", &pib);
+        if(densidade > densidade2){
+            printf("Vencedor: %s", pais);
+        }else if(densidade2 > densidade){
+            printf("Vencedor: %s", pais2);
+        
+        }else{
+            printf("Empate\n");
+        }
+        break;
+        default:
+        printf("Opção invalidade");
+        break;
 
-printf("Qual a quantidade de pontos turísticos na cidade: ");
-scanf("%d", &turistico);
-
-
-
-char Bahia[20];
-char cod[20];
-char Municipiu[30]; 
-unsigned long int pessoas;
-float tamanho; 
-float PIB;
-int turismo;
-float densidade;
-float Densidade;
-float per;
-float Per;
-
-
-
-printf("Carta 2:\nUma letra de 'A' a 'H' (representando um dos oito estados): ");
-scanf("%s", &Bahia);
-
-printf("A letra do estado seguida de um número de 01 a 04 (ex: A01, B03): ");
-scanf("%s", &cod);
-
-printf("O nome da cidade: ");
-scanf("%s", &Municipiu);
-
-printf("Qual é o número de habitantes da cidade: ");
-scanf("%d", &pessoas);
-
-printf("A área da cidade em quilômetros quadrados: ");
-scanf("%f", &tamanho);
-
-printf("O Produto Interno Bruto(PIB) da cidade: ");
-scanf("%f", &PIB);
-
-printf("Qual a quantidade de pontos turísticos na cidade: ");
-scanf("%d", &turismo);
-
-
-densidade = populacao / area;
-Densidade = pessoas / tamanho;
-per = pib / populacao;
-Per = PIB / pessoas ;
-
-
-
-printf("Carta 1: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n Densidade Populacional: %.2f\n PIB per Capita: %.2f\n", estado, codigo, cidade, populacao, area, pib, turistico, densidade, per);
-
-printf("Carta 2: \n Estado: %s\n Código: %s\n Nome da Cidade: %s\n População: %d\n Área: %f\n PIB: %f\n Número de Pontos Turísticos: %d\n Densidade Populacional: %.2f\n PIB per Capita: %.2f\n", Bahia, cod, Municipiu, pessoas, tamanho, PIB, turismo, Densidade, Per);
-
-printf("Carta 1 - %s: %d\n Carta 2 - %s: %d\n", cidade, populacao, Municipiu, pessoas);
-
-if(populacao > pessoas){
-    printf("Carta 1 (%s) venceu!!", cidade);
-}else{
-    printf("Carta 2 (%s) venceu!! ", Municipiu );
-}
-
+        return 0;
 
 
 
-return 0;
+
+
+
+    }
+    
+
+
+
+
+
+
+
 
 
 }
